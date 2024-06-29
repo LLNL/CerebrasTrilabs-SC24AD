@@ -1,0 +1,12 @@
+The Ta_Li_2003.eam.alloy file in this directory can also be obtained
+from the OpenKIM potential database:
+
+    https://openkim.org/id/EAM_Dynamo_LiSiegelAdams_2003_Ta__MO_103054252769_005
+
+with a direct link to the compressed file here:
+
+    https://openkim.org/download/EAM_Dynamo_LiSiegelAdams_2003_Ta__MO_103054252769_005.zip
+
+The Ta_Li_2003.eam.alloy file is under the Common Development and
+Distribution License (CDDL) version 1.0, see the LICENSE-CDDL file for
+details.

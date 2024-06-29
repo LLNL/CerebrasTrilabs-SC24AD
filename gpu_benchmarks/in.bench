@@ -1,0 +1,58 @@
+# Copyright 2024 Lawrence Livermore National Security, LLC
+# and other contributors. See the top-level COPYRIGHT file
+# for details.
+#
+# SPDX-License-Identifier: MIT
+
+print "Simulation of ${element} with ${nx}x${ny}x${nz} unit cells"
+include ${element}/${element}.inc
+
+units		metal
+atom_style	atomic
+
+lattice		${latttype} $(v_alatt*v_thexp) # Effective lattice constant
+region		box block 0 ${nx} 0 ${ny} 0 ${nz}
+create_box	1 box
+
+if "${pbc}==1" then "jump SELF pbc_section"
+if "${pbc}==2" then "jump SELF z_bc_section"
+label open_bc_section
+  variable bc string open
+  change_box all boundary s s s
+  jump SELF bc_section_end
+
+label z_bc_section
+  variable bc string openxy
+  change_box all boundary s s p
+  jump SELF bc_section_end
+
+label pbc_section
+  variable bc string pbc
+
+label bc_section_end
+
+
+read_dump  ${element}/cfgs/dump.${element}-crystal.${nx}x${ny}x${nz}.${bc}.gz &
+  20000  x y z vx vy vz box yes add yes
+mass		1 ${M}
+
+if "${alloytype}==1" then "jump SELF alloy_section"
+label eam_section
+  pair_style	eam
+  pair_coeff	* * ${element}/${potfile}
+  jump SELF potential_end
+label alloy_section
+  pair_style	eam/alloy
+  pair_coeff	* * ${element}/${potfile} ${element}
+label potential_end
+
+neighbor	1.0 bin
+neigh_modify	every 1 delay 0 check yes
+
+fix		1 all nve
+
+thermo_style custom step temp pe etotal press
+
+timestep 0.002  ## 2 fs timestep.
+thermo		0
+run		8000

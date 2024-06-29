@@ -1,0 +1,12 @@
+The Cu_u6.eam file in this directory can also be obtained from any
+LAMMPS distribution, in the potentials subdirectory, and from the
+OpenKIM potential database:
+
+    https://openkim.org/id/EAM_Dynamo_AdamsFoilesWolfer_1989Universal6_Cu__MO_145873824897_000
+
+with a direct link to the compressed file here:
+
+    https://openkim.org/download/EAM_Dynamo_AdamsFoilesWolfer_1989Universal6_Cu__MO_145873824897_000.zip
+
+The Cu_u6.eam file is under the GNU General Public License version
+2. See the file LICESE-GPL2 for details.

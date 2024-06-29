@@ -1,0 +1,11 @@
+This directory contains potential files (data files) that can be used
+for running the benchamarks in this appendix. We have bundeled them
+with this appendix as a convenience; they can be downloaded from other
+sources, as well as recrafted from descriptions in journal
+publications.
+
+The potential files (data files) are under different licenses. Each
+potential file is annotated with an SPDX license descriptor, and each
+potential file has a readme file describing its origin and potential
+modifications. The full licenses can be found in the LICENSE-X files,
+where X is an abbreviation of the license in question.

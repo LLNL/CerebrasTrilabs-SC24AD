@@ -1,0 +1,21 @@
+The W_zhou_short.eam.alloy file (*) in this directory can also be
+obtained from any LAMMPS distribution, in the potentials subdirectory,
+and from the OpenKIM potential database:
+
+    https://openkim.org/id/EAM_Dynamo_ZhouWadleyJohnson_2001_W__MO_621445647666_000
+
+with a direct link to the compressed file here:
+
+    https://openkim.org/download/EAM_Dynamo_ZhouWadleyJohnson_2001_W__MO_621445647666_000.zip
+
+(*) Modification: Compared to the publicly available references above,
+we modified the file in the following ways: We changed the cut-off
+radius to rc = 5.524750 A. For the rho(r) and phi(r) we maintained
+only every 14'th point of each function table, starting with the
+first, and omitted points for r > rc. For the F(rho) function, we
+maintained only every 20'th points, starting with the first. That
+means we have 501 points in each of the function tables as opposed to
+10001 in the original file.
+
+The included file W_zhou_short.eam.alloy is under the GNU General Public
+License verion 2.0. See the LICENSE-GPL2 file for details.
